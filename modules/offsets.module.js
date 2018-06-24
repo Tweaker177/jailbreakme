@@ -1,5 +1,9 @@
 //Fuck off Joseph Shenton and other copycats (Except for coolstar and luca todesco, they are free to copy).
-var Offsets = function Offsets(sw_vers, productname) {
+var Offsets = function Offsets(productname, sw_version) {
+    //order was backwards tbat was being returned, so changed here, or at bottom could be changed
+    //hope that helps, was still getting offset error on 8+ using website
+    // -i0stweak3r
+    //code was var Offsets= function Offsets(sw_vers, productname) {
     
     var offsets = [];
     
@@ -82,7 +86,10 @@ var Offsets = function Offsets(sw_vers, productname) {
     
     if(offsets[productname] !== undefined) {
         if(offsets[productname][sw_vers] !== undefined) {
-            return offsets[productname][sw_vers];
+            
+            
+             return offsets[productname][sw_vers]; 
+            //switch product and version order to match function as alt fix
         }
     }
     return false;
